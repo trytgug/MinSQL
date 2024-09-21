@@ -32,10 +32,16 @@ python src/table_recall.py \
 echo "recall columns..."
 python src/column_recall.py \
     --input_recalled_tables_path "./generate_datasets/table_recall.json" \
-    --output_recalled_columns_path "./generate_datasets/column_ranking.json" \
+    --output_recalled_columns_path "./generate_datasets/column_recall.json" \
 
 # generate prompt
 echo "generate prompt..."
 python src/prompt_generate.py \
     --input_dataset_path "./generate_datasets/column_recall.json" \
     --output_dataset_path "./generate_datasets/prompt.json" \
+
+# generate relational algebra
+echo "generate RA..."
+python src/prompt_generate.py \
+    --input_dataset_path "./generate_datasets/prompt.json" \
+    --output_dataset_path "./generate_datasets/spider_gpt4-turbo.json" \
