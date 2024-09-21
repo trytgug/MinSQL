@@ -42,6 +42,6 @@ python src/prompt_generate.py \
 
 # generate relational algebra
 echo "generate RA..."
-python src/prompt_generate.py \
+python src/generateRA.py \
     --input_dataset_path "./generate_datasets/prompt.json" \
     --output_dataset_path "./generate_datasets/spider_gpt4-turbo.json" \
